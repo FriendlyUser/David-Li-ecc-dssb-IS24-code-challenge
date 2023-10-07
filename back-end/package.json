@@ -1,0 +1,11 @@
+{
+    "name": "back-end",
+    "version": "0.1.0",
+    "main": "index.js",
+    "scripts": {
+        "genData": "node scripts/genData.js"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^8.1.0"
+    }
+}
