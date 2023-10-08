@@ -10,7 +10,7 @@
     ],
     "scrumMasterName": "Claire Walter",
     "startDate": "2023/8/30",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productAubree_Mayer14"
   },
   {
@@ -80,7 +80,7 @@
     ],
     "scrumMasterName": "Van Schroeder",
     "startDate": "2023/1/19",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productDarien_Quitzon"
   },
   {
@@ -94,7 +94,7 @@
     ],
     "scrumMasterName": "Barbara Farrell",
     "startDate": "2023/9/13",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productJedediah.Daniel"
   },
   {
@@ -108,7 +108,7 @@
     ],
     "scrumMasterName": "Maria Jacobs",
     "startDate": "2022/10/21",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productMarlee26"
   },
   {
@@ -122,7 +122,7 @@
     ],
     "scrumMasterName": "Lela McKenzie",
     "startDate": "2022/11/16",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productRaoul_Sawayn32"
   },
   {
@@ -164,7 +164,7 @@
     ],
     "scrumMasterName": "Bill Wunsch",
     "startDate": "2023/2/13",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productAdonis65"
   },
   {
@@ -192,7 +192,7 @@
     ],
     "scrumMasterName": "Arthur Casper",
     "startDate": "2023/5/7",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productOliver1"
   },
   {
@@ -262,7 +262,7 @@
     ],
     "scrumMasterName": "Ms. Shari Koch",
     "startDate": "2023/9/19",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productAlize.Daniel10"
   },
   {
@@ -276,7 +276,7 @@
     ],
     "scrumMasterName": "Cynthia Morar",
     "startDate": "2023/8/31",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productKristoffer.Grimes-Stanton47"
   },
   {
@@ -318,7 +318,7 @@
     ],
     "scrumMasterName": "Joey Doyle",
     "startDate": "2022/11/17",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productAfton_Mraz"
   },
   {
@@ -472,7 +472,7 @@
     ],
     "scrumMasterName": "Darnell Fahey",
     "startDate": "2023/9/18",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productKaya_Kling82"
   },
   {
@@ -556,7 +556,7 @@
     ],
     "scrumMasterName": "Hector Daniel",
     "startDate": "2023/1/4",
-    "methodology": "Spiral",
+    "methodology": "Waterfall",
     "location": "https://github.com/bcgov/productGarrick10"
   }
 ]
