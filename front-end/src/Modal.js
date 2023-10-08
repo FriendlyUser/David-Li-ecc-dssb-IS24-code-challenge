@@ -16,7 +16,7 @@ const Modal = ({ showModal, setShowModal, children }) => {
     }, [showModal]);
   
     return (
-      <dialog ref={modalRef} onClose={() => setShowModal(false)}>
+      <dialog ref={modalRef} onClose={() => setShowModal(false)} className="min-w-1/2">
         {children}
       </dialog>
     );

@@ -56,7 +56,7 @@ const DataTable = ({ data, isLoading, onEdit = () => {}, onDelete = () => {} }) 
             day: 'numeric'
         });
         return (
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr class="bg-white border-b hover:bg-gray-50" key={tableRow.productId + tableRow.productName}>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {tableRow.productId}
                 </td>
@@ -94,7 +94,7 @@ const DataTable = ({ data, isLoading, onEdit = () => {}, onDelete = () => {} }) 
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <div class="flex items-center gap-2 justify-center">
-                        <a href={tableRow.location}>
+                        <a href={tableRow.location} target="_blank" rel="noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
                         </a>
                         <span class="hover:cursor-pointer" onClick={onEdit(tableRow)}>
@@ -110,7 +110,7 @@ const DataTable = ({ data, isLoading, onEdit = () => {}, onDelete = () => {} }) 
 
     }
     return (
-        <div class="mx-auto max-full px-6 lg:px-8 py-12 md:py-16 lg:py-16">
+        <div>
             <div class="border-gray rounded-md overflow-x-auto">
                 <table class="border-transparent min-w-full border-separate border-spacing-0">
                     {renderHeader()}
