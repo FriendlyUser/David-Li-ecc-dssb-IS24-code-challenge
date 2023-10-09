@@ -43,7 +43,7 @@ function App() {
           </p>
         )}
       </div>
-      <div className="overflow-y-auto">
+      <div className="overflow-y-auto max-h-180">
         <DataTable data={data} isLoading={isLoading} onEdit={(tableRow) => {
           setSelectedProduct(tableRow);
           setEditShowModal(true);

@@ -1,5 +1,12 @@
 const products = require('../data/products.json');
 
+/**
+ * Retrieves products based on the provided search query.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @return {void} The filtered products or all products.
+ */
 function getProducts (req, res) {
 
     // grab search query parameter and filter products
@@ -26,6 +33,13 @@ function getProducts (req, res) {
     }
 };
 
+/**
+ * Adds a product to the products array if all required fields are provided.
+ *
+ * @param {Object} req - the request object
+ * @param {Object} res - the response object
+ * @return {void}
+ */
 function addProduct (req, res) {
     const body = req.body;
     const {productName, productOwnerName, startDate, methodology, location } = body;
@@ -40,12 +54,19 @@ function addProduct (req, res) {
         return;
     } else {
         console.log(body);
-        // throw json error
+        
         res.status(400).json({ message: 'Invalid request' });
     }
 };
 
-// editProduct
+
+/**
+ * Edits a product based on the provided request and response objects.
+ *
+ * @param {Object} req - The request object containing the body and params.
+ * @param {Object} res - The response object used to send the response.
+ * @return {void} No return value.
+ */
 function editProduct (req, res) {
     const body = req.body;
     const { productId } = req.params;
@@ -61,12 +82,10 @@ function editProduct (req, res) {
             };
             res.json(products);
         } else {
-            // throw json error
-            res.status(400).json({ message: 'Cannot find product given the product Id' });
+            res.status(404).json({ message: 'Cannot find product given the product Id' });
         }
         return;
     } else {
-        // throw json error
         res.status(400).json({ message: 'Invalid request' });
     }
 }

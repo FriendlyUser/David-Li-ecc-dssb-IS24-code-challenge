@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       minWidth: {
         '1/2': '50%',
-      }
+      },
+      maxHeight: {
+        '180': '45rem',
+        '192': '48rem',
+      },
     },
   },
   plugins: [],
