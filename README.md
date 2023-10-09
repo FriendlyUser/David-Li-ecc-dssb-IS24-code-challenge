@@ -53,7 +53,7 @@ The API uses in-memory storage for products. On startup it initializes with samp
 
 ## Frontend
 
-The frontend uses React and is located in the `/frontend` folder. 
+The frontend uses React with tailwind css and is located in the `/frontend` folder.
 
 To run:
 
