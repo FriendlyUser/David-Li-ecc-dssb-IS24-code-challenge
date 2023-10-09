@@ -2,9 +2,15 @@
 import React, {useState} from "react";
 import { useSWRConfig } from 'swr'
 // import useSWR from 'swr'; invalidate cache
-import {baseUrl} from "./utils";
+import {baseUrl} from "../utils";
 import Modal from "./Modal";
 
+/**
+ * Renders a form for adding a new product and handles the submission of the form data.
+ *
+ * @param {Event} e - The form submit event.
+ * @return {void} No return value.
+ */
 function AddProduct () {
     const [showModal, setShowModal] = useState(false);
     const [developers, setDevelopers] = useState([]);
@@ -80,16 +86,6 @@ function AddProduct () {
 
         <Modal showModal={showModal} setShowModal={setShowModal}>
             <div className="modal-content p-4 rounded-md">
-                <div className="flex justify-end">
-                    <button type="button" onClick={() => {
-                        setShowModal(false);
-                    }} className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-0 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Close menu</span>
-                        <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
                 <h2 className="text-lg font-bold">Add New Product</h2>
                 <form onSubmit={onSubmit} name="form">
                     <div className="mt-4">

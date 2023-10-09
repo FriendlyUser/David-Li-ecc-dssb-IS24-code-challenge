@@ -1,12 +1,22 @@
 import React from 'react';
 import useSWR from 'swr';
 import {fetcher} from './utils';
-import DataTable from './Table';
-import AddProduct from './AddProduct';
+import DataTable from './components/Table';
+import Modal from "./components/Modal";
+import AddProduct from './components/AddProduct';
 import './App.css';
+import EditProduct from './components/EditProduct';
+
+/**
+ * Renders the App component.
+ *
+ * @return {JSX.Element} The rendered JSX element.
+ */
 // 
 function App() {
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [showEditModal, setEditShowModal] = React.useState(false);
+  const [selectedProduct, setSelectedProduct] = React.useState(null);
   const productsApi = searchTerm ? `/api/products?q=${searchTerm}` : `/api/products`;
   const { data, error, isLoading } = useSWR(productsApi, fetcher);
   return (
@@ -14,7 +24,7 @@ function App() {
       <div className="flex justify-between">
         {/** Search Bar */}
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-48"
+          className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-48"
           id="search"
           type="text"
           placeholder="Search"
@@ -23,6 +33,9 @@ function App() {
         />
         <AddProduct />
       </div>
+      <Modal showModal={showEditModal} setShowModal={setEditShowModal}>
+        <EditProduct product={selectedProduct} setShowModal={setEditShowModal} />
+      </Modal>
       <div className="mt-4 text-right">
         {data && (
           <p className="text-gray-500">
@@ -31,7 +44,10 @@ function App() {
         )}
       </div>
       <div className="overflow-y-auto">
-        <DataTable data={data} isLoading={isLoading} />
+        <DataTable data={data} isLoading={isLoading} onEdit={(tableRow) => {
+          setSelectedProduct(tableRow);
+          setEditShowModal(true);
+        }}/>
       </div>
     </div>
   );

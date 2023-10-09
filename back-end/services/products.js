@@ -48,13 +48,22 @@ function addProduct (req, res) {
 // editProduct
 function editProduct (req, res) {
     const body = req.body;
-    const { productId, productName, productOwnerName, startDate, methodology, location } = body;
-    if (productId && productName && productOwnerName && startDate && methodology && location) {
-        // find product by id
-        const index = products.findIndex(product => product.productId === productId);
+    const { productId } = req.params;
+    const { productName, productOwnerName, methodology, location } = body;
+    if (productId && productName && productOwnerName && methodology && location) {
+        // find product by id, need do type conversion
+        const index = products.findIndex(product => product.productId === Number(productId));
         // modify product 
-        products[index] = body;
-        res.json(products);
+        if (index >= 0) {
+            products[index] = {
+                ...products[index],
+                ...body,
+            };
+            res.json(products);
+        } else {
+            // throw json error
+            res.status(400).json({ message: 'Cannot find product given the product Id' });
+        }
         return;
     } else {
         // throw json error
@@ -62,22 +71,6 @@ function editProduct (req, res) {
     }
 }
 
-// delete product
-function deleteProduct (req, res) {
-    const body = req.body;
-    const { productId } = body;
-    if (productId ) {
-        // find product by id
-        const index = products.findIndex(product => product.productId === productId);
-        // modify product 
-        products.splice(index, 1);
-        res.json(products);
-        return;
-    } else {
-        // throw json error
-        res.status(400).json({ message: 'Invalid request' });
-    }
-}
 
 // delete product
 exports.getProducts = getProducts;
