@@ -2,6 +2,8 @@
 
 This project is a demo simplified web application to track and manage web applications developed by the Province of British Columbia. It consists of a backend API and frontend UI.
 
+This README provides instructions on running the app locally and outlines the overall architecture. The backend API is documented with Swagger.
+
 ## Using Docker
 
 To run the application using docker-compose, you can run
@@ -78,7 +80,3 @@ To run the full app with both frontend and backend:
 3. The frontend will proxy API requests to the backend
 
 The frontend will be available at `http://localhost:3000` and the backend at `http://localhost:8000`.
-
-## Documentation
-
-This README provides instructions on running the app locally and outlines the overall architecture. The backend API is documented with Swagger.
