@@ -18,7 +18,7 @@ function App() {
   const [showEditModal, setEditShowModal] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState(null);
   const productsApi = searchTerm ? `/api/products?q=${searchTerm}` : `/api/products`;
-  const { data, error, isLoading } = useSWR(productsApi, fetcher);
+  const { data, isLoading } = useSWR(productsApi, fetcher);
   return (
     <div className="text-center py-12 px-6 lg:px-8 md:py-16 lg:py-16 overflow-x-auto">
       <div className="flex justify-between">
